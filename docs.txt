@@ -1,0 +1,85 @@
+|-------------------------------------------------------------------------------------------------|
+|==============================<<--- Docs of Trending Service --->>===============================|
+|_________________________________________________________________________________________________|
+
+|| 👇 READ BELOW TO GET STARTED WITH TRENDING SERVICE : 
+__________________________________________________________________________________________________|
+
+___|✔ Trending Service is typically started at PORT < 8000 >
+
+___|✔ To run trending service in Nodejs environment , you must have nodejs available first 
+    1. download from this link https://nodejs.org/en
+    2. RUN COMMAND : npm run trending-service 
+
+___|✔ To run trending service with Docker environment , you must have docker client installed on your machine.
+    1. Install docker client 
+    2. RUN COMMAND : docker build -t any_name_image:tdsv-1.0 .  < it will build docker image of trending service for you >
+    3. RUN COMMNAD : docker run --name any_name  -p any_port:8000 -d trending-service:tdsv-1.0
+
+    |-- TAKE NOTE ❗
+    | Above variable :
+    | ✔ 1. any_name_image => Give it to any name of docker image you desire.
+    | ✔ 2. any_name  => Give it to any name of your docker container you desire
+    | ✔ 3. any_port => Assign it to any port availble for your computer environment that does not crash with the currently running environment
+
+    || _________________________⚡    API ENDPOINTS  ⚡ ____________________________
+
+    | 1. To get trending in every hour , please use this ENDPOINT
+    👉 http://localhost:PORT/trending/trendinginhour
+    ⚡ You will get the data like this response : 
+            {
+                error: true | false,
+                message: message,
+                data: data
+            }
+    | 2. To get trending in a whole day , please use this ENDPOINT
+    👉 http://localhost:PORT/trending/trendingintoday
+    ⚡ You will get the data like this response : 
+            {
+                error: true | false,
+                message: message,
+                data: data
+            }
+    | 3. To get trending per week , please use this ENDPOINT
+    👉 http://localhost:PORT/trending/trendinginweek
+    ⚡ You will get the data like this response : 
+            {
+                error: true | false,
+                message: message,
+                data: data
+            }
+    | 4. To start the process of trending in every hour , please use this ENDPOINT
+    👉 http://localhost:PORT/trending/startprocessfromnow/trendinginhour
+    ⚡ You will get the data like this response : 
+            {
+                error: true | false,
+                message: message,
+                data: data
+            }
+    | 5. To start the process of trending in a whole day , please use this ENDPOINT
+    👉 http://localhost:PORT/trending/startprocessfromnow/trendingintoday
+    ⚡ You will get the data like this response : 
+            {
+                error: true | false,
+                message: message,
+                data: data
+            }
+    | 5. To start the process of trending per week , please use this ENDPOINT
+    👉 http://localhost:PORT/trending/startprocessfromnow/trendinginweek
+    ⚡ You will get the data like this response : 
+            {
+                error: true | false,
+                message: message,
+                data: data
+            }
+    | 5. To add trending to the padcast in inhour,today and week , please use this ENDPOINT
+    👉 http://localhost:PORT/trending/addtrending
+    👉      body : {
+                identify: id of a particular podcast want to be trended
+            }
+    ⚡ You will get the data like this response : 
+            {
+                error: true | false,
+                message: message,
+                data: data
+            }
